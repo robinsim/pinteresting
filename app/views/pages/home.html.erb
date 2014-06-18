@@ -2,7 +2,12 @@
 <div class="jumbotron">
 <h1>Welcome to my app</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to "Login in", "", class:"btn btn-success btn-lg" %>.</p>
-<%= link_to "sign up", "", class:"btn btn-success btn-lg" %>.</p>
-</div>
+<% if user_signed_in? %>
+<% else %>
+</p>
 
+<%= link_to "Login in", new_user_session_path, class:"btn btn-success btn-lg" %>.</p>
+<%= link_to "sign up", new_user_registration_path, class:"btn btn-success btn-lg" %>.</p>
+</p>
+</div>
+<% end %>
